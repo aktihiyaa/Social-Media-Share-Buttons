@@ -58,7 +58,7 @@ function mozedia_smsb_welcome_options_page() {
             ?>
         </form>
     </div>
-    <div>Need help, check this <a href="https://www.kalyanblogger.com/social-media-share-buttons" target="_blank">Guidelines</a> for more details.</div>
+    <div>Need help, check this <a href="https://kalyanblogger.com/product-category/plugins/" target="_blank">Guidelines</a> for more details.</div>
     <?php
 }
 
