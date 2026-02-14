@@ -45,6 +45,8 @@ This free social sharing plugin includes the following features:
 
 Need another social network? [Contact us](https://kalyanblogger.com/contact-us/) for suggestions!
 
+Of course, available on [GitHub](https://github.com/aktihiyaa/social-media-share-buttons)
+
 ### Why Choose This Plugin?
 
 - **Speed focused** - No JavaScript, no jQuery, no slow page loads
