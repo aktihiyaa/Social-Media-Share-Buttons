@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Social Media Share Buttons
+Plugin Name: Ultimate Social Media Share Buttons
 Plugin URI: https://www.kalyanblogger.com/
 Description: #1 Fast Loading Social Media Sharing Buttons, no need JavaScript and jQuery.
 Author: Chetan Patel
