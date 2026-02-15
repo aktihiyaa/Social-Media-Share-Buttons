@@ -2,7 +2,7 @@
 Contributors: chetanpatel
 Tags: social share, share buttons, social icons, facebook share, whatsapp share
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.2
 Stable tag: 2.0.2
 License: GPLv2 or later
@@ -138,7 +138,7 @@ Yes! You can set a custom viewport width (in pixels) where the floating buttons 
 * Security improvements and code optimization
 * Fixed text domain for proper translations
 * Added proper escaping for all output
-* Updated tested up to WordPress 6.8
+* Updated tested up to WordPress 6.9
 * Improved sanitization for all settings
 
 = 2.0.1 =
