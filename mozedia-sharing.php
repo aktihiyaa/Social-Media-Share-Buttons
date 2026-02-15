@@ -8,7 +8,7 @@ Author URI: https://www.kalyanblogger.com/
 Version: 2.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
-Text Domain: social-media-share-buttons
+Text Domain: ultimate-social-media-share-buttons   
 */
 
 defined('ABSPATH') || exit;
@@ -36,7 +36,7 @@ function mozedia_smsb_welcome_tab() {
     ?>
     <a class="nav-tab <?php echo ($active_tab == 'inline') ? 'nav-tab-active' : ''; ?>" 
        href="<?php echo admin_url('options-general.php?page=mozedia-social-sharing&tab=inline'); ?>">
-       <?php _e('Inline Sharing', 'social-media-share-buttons'); ?> 
+       <?php _e('Inline Sharing', 'ultimate-social-media-share-buttons'); ?>   <!-- ✅ updated -->
     </a>
     <?php
 }
@@ -70,7 +70,7 @@ function mozedia_cos_tab2() {
     ?>
     <a class="nav-tab <?php echo ($active_tab == 'floating') ? 'nav-tab-active' : ''; ?>" 
        href="<?php echo admin_url('options-general.php?page=mozedia-social-sharing&tab=floating'); ?>">
-       <?php _e('Floating Sharing', 'social-media-share-buttons'); ?> 
+       <?php _e('Floating Sharing', 'ultimate-social-media-share-buttons'); ?>   <!-- ✅ updated -->
     </a>
     <?php
 }
@@ -123,7 +123,7 @@ function mozedia_smsb_settings() {
     add_settings_field("mozedia-social-sharing-top-padding", "Top padding", "mozedia_cos_top_padding", "mozedia-floating-sharing", "mozedia_float_config_section");
     add_settings_field("mozedia-social-sharing-mobile-hide", "Hide on Mobile", "mozedia_cos_mobile_hide", "mozedia-floating-sharing", "mozedia_float_config_section");
     
-    // ✅ FIXED: Added sanitization to all register_setting() calls
+    // ✅ Sanitization added to all register_setting() calls
     register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-facebook", 'intval');
     register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-twitter", 'intval');
     register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-twitter-name", 'sanitize_text_field');
@@ -147,6 +147,7 @@ function mozedia_smsb_settings() {
 }
 add_action("admin_init", "mozedia_smsb_settings");
 
+// Rest of your functions remain exactly the same...
 function mozedia_cos_sharing_global() {
     $value = get_option('mozedia-social-sharing-post-page-global');
     ?>
