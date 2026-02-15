@@ -115,6 +115,7 @@ function mozedia_smsb_settings() {
     add_settings_field("mozedia-social-sharing-global", "Activate", "mozedia_cos_sharing_global", "mozedia-social-sharing", "mozedia_smsb_config_section");
     add_settings_field("mozedia-social-sharing-title", "Share Title", "mozedia_cos_sharing_title", "mozedia-social-sharing", "mozedia_smsb_config_section");
     add_settings_field("mozedia-social-sharing-facebook", "Choose Icons", "mozedia_cos_sharing_post_page_options", "mozedia-social-sharing", "mozedia_smsb_config_section");
+    
     add_settings_field("mozedia-social-sharing-twitter", "Twitter Username", "mozedia_cos_sharing_twitter", "mozedia-social-sharing", "mozedia_smsb_config_section");
     add_settings_field("mozedia-social-sharing-nofollow", "Add Nofollow", "mozedia_cos_sharing_nofollow", "mozedia-social-sharing", "mozedia_smsb_config_section");
     add_settings_field("mozedia-social-sharing-floating", "Activate", "mozedia_cos_sharing_float_global", "mozedia-floating-sharing", "mozedia_float_config_section");
@@ -122,26 +123,27 @@ function mozedia_smsb_settings() {
     add_settings_field("mozedia-social-sharing-top-padding", "Top padding", "mozedia_cos_top_padding", "mozedia-floating-sharing", "mozedia_float_config_section");
     add_settings_field("mozedia-social-sharing-mobile-hide", "Hide on Mobile", "mozedia_cos_mobile_hide", "mozedia-floating-sharing", "mozedia_float_config_section");
     
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-facebook");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-twitter");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-twitter-name");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-pinterest");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-linkedin");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-whatsapp");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-rel-nofollow");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-custom-label");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-email");
-    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-post-page-global");
+    // ✅ FIXED: Added sanitization to all register_setting() calls
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-facebook", 'intval');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-twitter", 'intval');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-twitter-name", 'sanitize_text_field');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-pinterest", 'intval');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-linkedin", 'intval');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-whatsapp", 'intval');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-rel-nofollow", 'intval');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-custom-label", 'sanitize_text_field');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-email", 'intval');
+    register_setting("mozedia_smsb_config_section", "mozedia-social-sharing-post-page-global", 'intval');
     
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-facebook");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-twitter");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-pinterest");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-linkedin");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-whatsapp");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-email");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-top-padding");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-mobile-hide");
-    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-global");
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-facebook", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-twitter", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-pinterest", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-linkedin", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-whatsapp", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-email", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-top-padding", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-mobile-hide", 'intval');
+    register_setting("mozedia_float_config_section", "mozedia-social-sharing-float-global", 'intval');
 }
 add_action("admin_init", "mozedia_smsb_settings");
 
