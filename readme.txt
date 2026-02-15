@@ -1,4 +1,4 @@
-=== Social Media Share Buttons ===
+=== Ultimate Social Media Share Buttons ===
 Contributors: chetanpatel
 Tags: social share, share buttons, social icons, facebook share, whatsapp share
 Requires at least: 5.0
